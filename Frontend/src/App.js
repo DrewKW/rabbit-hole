@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
-import { Nav } from 'react-bootstrap';
+//import { Navbar } from 'react-bootstrap';
 import './App.css';
 import Navbar from './components/Navbar';
 import {BrowserRouter as Router} from 'react-router-dom';
 
 
-/* function App() {
+ /* function App() {
   useEffect(() => {
     fetch('http://localhost:5000/')
     .then((response) => response.json())
@@ -23,7 +23,7 @@ function App() {
     fetch('/api')
       .then((res) => res.json())
       .then((data) => setData(data.message));
-  }, []);
+  }, []); 
 
 
   return (
