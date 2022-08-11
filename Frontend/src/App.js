@@ -1,23 +1,35 @@
-import { useEffect } from 'react';
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
+import React from 'react';
+import { Nav } from 'react-bootstrap';
 import './App.css';
+import Navbar from './components/Navbar';
+import {BrowserRouter as Router} from 'react-router-dom';
 
-function App() {
+
+/* function App() {
   useEffect(() => {
-    fetch('http://localhost:3001/')
+    fetch('http://localhost:5000/')
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
     });
+  }, []); */
+
+
+function App() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch('/api')
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
   }, []);
-  
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Welcome to your Movie Portal</h1>
-      </header>
-    </div>
+    <Router>
+    <Navbar />
+    </Router>
   );
 }
 
